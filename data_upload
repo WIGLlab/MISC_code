@@ -1,2 +1,12 @@
 notes on how to upload genome, log in to data trandfer, git ftp link path from ncli, wgets PATH (https;/),
 SRA notes, how to upload, filesys.
+
+
+sra toolkit
+->download accession list od all sra runs (.txt) & copy to biocluster
+->module load SRA
+-> prefetch --option-file SraAccList.txt
+-> move files to data_directory (mkdir data, mv SRR* data/., cd data)
+->fasterq-dump --split-files * 
+results in _1.fastq and _2.fastq per SSR file
+(https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/#download-sequence-data-files-usi)
