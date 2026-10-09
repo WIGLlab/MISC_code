@@ -1,0 +1,21 @@
+#See all declared variables in the environment (including scratch directory etc)
+env
+
+##see/edit aliases for bashrc environement
+cat .bashrc
+nano .bashrc and add the following:
+
+# Export some location variables
+export labSpace="/projects/illinois/las/sib/jcatchen/"
+export mySpace="/projects/illinois/aces/shared/deflami2/"
+export SIB="//projects/illinois/las/sib/shared/home/deflami2/"
+export S="/projects/illinois/las/sib/jcatchen/deflami2/salmon/2024_Sock_Pub"
+# Useful Aliases
+alias interactivec="srun -p catchenlab -t 12:00:00 --pty /bin/bash"
+alias interactivei="srun -p IllinoisComputes --account=jcatchen-ic -t 12:00:00 --pty /bin/bash"
+alias qme='squeue --user deflami2 --format="%.10i %.12P %.24j %.8u %.8T %.4C %.12M %.12l %.6D %R"'
+alias qclab='squeue --partition catchenlab --format="%.10i %.12P %.24j %.8u %.8T %.4C %.12M %.12l %.6D %R"'
+alias qsib='squeue --partition sib --format="%.10i %.12P %.24j %.8u %.8T %.4C %.12M %.12l %.6D %R"'
+
+
+##Thomas can you add how to login to a data transfer node and how to copy over a genome using wget? 
