@@ -1,0 +1,3 @@
+# see file size and permissions:
+ls -l file
+
