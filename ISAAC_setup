@@ -17,8 +17,17 @@ export mySpace="/lustre/isaac24/proj/UTK0522"
 source ~/.bashrc 
 
 
+---------------
 
+ #SBATCH -A UTK0011
+ #SBATCH --partition=campus 
 
+Detailed information about all the partitions, and the respective nodes on ISAAC Open Enclave (at KPB) can be viewed using the command:
+
+ $ sinfo -Nel
+
+##RUN AN INTERACTIVE JOB (limit is 1 hour)
+salloc -A ACF-UTK0011 --nodes=1 --ntasks=1 --partition=campus --time=01:00:00
 
 
 ---------------------------------
