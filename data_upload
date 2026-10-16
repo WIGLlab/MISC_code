@@ -10,3 +10,17 @@ sra toolkit
 ->fasterq-dump --split-files * 
 results in _1.fastq and _2.fastq per SSR file
 (https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/#download-sequence-data-files-usi)
+
+
+
+downloading SRA data on ISAAC
+-> go to NCBI SRA database and search your target organism
+-> at the top of the page select "Send to:" -> "File" -> format: "Full XML" -> "Create File"
+-> open your xml file in excell, or similar, and choose your desired organisms
+-> in your terminal, or code editor, ssh into ISAAC datatransfer node dtn1 or dtn2.isaac.utk.edu
+bash:> ssh <netID>@dtn1.isaac.utk.edu
+-> cd or mkdir to your desired directory for sra data
+-> create a file "SraAccList.txt" and insert your desired SRA numbers from the XML file
+bash:> module load sra-tools/3.4.1
+bash:> prefetch --option-file SraAccList.txt
+-> add flag " --max-size <amount>G " before the second flag in order to bypass thee built in 20G limit
