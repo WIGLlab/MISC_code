@@ -14,3 +14,4 @@
  module load example/test
 
 #always start with cd to change to where you want files to be stored
+fasterq-dump --split-files * 
