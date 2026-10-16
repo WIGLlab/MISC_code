@@ -1,5 +1,5 @@
-notes on how to upload genome, log in to data trandfer, git ftp link path from ncli, wgets PATH (https;/),
-SRA notes, how to upload, filesys.
+notes on how to upload genome+, log in to data trandfer+, git ftp link path from ncli+, wgets PATH (https;/),
+SRA notes+, how to upload+, filesys-.
 
 
 sra toolkit
@@ -11,7 +11,20 @@ sra toolkit
 results in _1.fastq and _2.fastq per SSR file
 (https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/#download-sequence-data-files-usi)
 
-
+downloading your Genome on ISAAC
+-> go to NCBI Genome database and search you target organism's assembly
+-> check your assembly to ensure it is of good quality and has no lacking assemblies
+-> navigate to the top of the page and select "FTP" ; it will open up a new page with many file paths
+-> in your terminal, or code editor, ssh into ISAAC datatransfer node dtn1 or dtn2
+bash:> ssh <netID>@dtn1.isaac.utk.edu
+-> cd or mkdir to your desired directory for the genome
+-> from the FTP page, right click on the genome file, it will end in something like "genomic.fna.gz"
+-> copy the https:// path from the menu and head back to the terminal
+-> from your desired directory:
+bash:> wgets <paste filepath>
+-> depending on the size of your genome, this might take several minutes
+-> the downloaded genome is currently zipped, so to view the data, you will have to use command:
+bash:> catz <filename> | head -n 10
 
 downloading SRA data on ISAAC
 -> go to NCBI SRA database and search your target organism
